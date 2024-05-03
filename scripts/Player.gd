@@ -44,14 +44,14 @@ func _input(event):
 	
 	direction.x = 0
 	
-	if Input.is_action_pressed("left"):
+	if Input.is_action_pressed("right"):
 		direction.x += speed
 				
 		$PlayerAnim.flip_h = false
 		if not attacking:
 			$PlayerAnim.play("walk")
 		
-	elif Input.is_action_pressed("right"):
+	elif Input.is_action_pressed("left"):
 		direction.x -= speed
 		
 		$PlayerAnim.flip_h = true
@@ -101,9 +101,9 @@ func _on_PlayerAnim_animation_finished():
 
 func _use_portal(new_position):
 	direction = Vector2.ZERO
-	
+
 	visible = false
-	
+
 	call_deferred("_collision_off")
 	var tween = create_tween()
 	tween.tween_property(self, "global_position", new_position, 1.0)

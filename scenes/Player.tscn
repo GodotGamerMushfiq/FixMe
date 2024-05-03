@@ -167,7 +167,6 @@ collision_mask = 2
 [node name="AttackCollision" type="CollisionShape2D" parent="AttackNode/AttackArea"]
 rotation = 1.19528
 shape = SubResource( 26 )
-disabled = true
 
 [node name="PlayerCollision" type="CollisionShape2D" parent="."]
 position = Vector2( -2, 0 )
