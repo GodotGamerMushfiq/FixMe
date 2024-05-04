@@ -32,7 +32,7 @@ func _on_WalkTimer_timeout():
 
 func _on_KillArea_body_entered(body):
 	if body.is_in_group("player"):
-		GlobalSignals.emit_signal("player_reset")
+		get_tree().reload_current_scene()
 		queue_free()
 		
 
@@ -46,5 +46,4 @@ func _on_KillArea_body_entered(body):
 
 func _on_DieArea_area_entered(area):	
 	if area.is_in_group("player_weapon"):
-		GlobalSignals.emit_signal("player_reset")
 		queue_free()

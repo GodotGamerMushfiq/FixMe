@@ -46,6 +46,7 @@ func _input(event):
 	
 	if Input.is_action_pressed("right"):
 		direction.x += speed
+		$AttackNode.scale.x = 1
 				
 		$PlayerAnim.flip_h = false
 		if not attacking:
@@ -53,6 +54,7 @@ func _input(event):
 		
 	elif Input.is_action_pressed("left"):
 		direction.x -= speed
+		$AttackNode.scale.x = -1
 		
 		$PlayerAnim.flip_h = true
 		if not attacking:
@@ -108,7 +110,7 @@ func _use_portal(new_position):
 	var tween = create_tween()
 	tween.tween_property(self, "global_position", new_position, 1.0)
 	yield (tween, "finished")
-
+	_collision_on()
 	visible = true
 
 
@@ -119,6 +121,7 @@ func _collision_off():
 	$PlayerCollision.disabled = true
 
 func _collision_on():
+	$AttackNode/AttackArea/AttackCollision.disabled= false
 	$PlayerCollision.disabled = false
 	
 
