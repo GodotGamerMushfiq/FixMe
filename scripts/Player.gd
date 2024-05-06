@@ -68,6 +68,7 @@ func _input(event):
 		
 	if Input.is_action_just_pressed("attack") and have_sword:
 		attacking = true	
+		$PlayerAnim.set_frame(0)
 		$PlayerAnim.play("attack")	
 		$AttackNode/AttackArea/AttackCollision.disabled = false
 			

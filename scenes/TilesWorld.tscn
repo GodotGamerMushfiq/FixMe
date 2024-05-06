@@ -141,7 +141,7 @@ walk_time = 1.0
 [node name="Goomba2" parent="enemies" instance=ExtResource( 3 )]
 position = Vector2( -1684, 304 )
 walk_speed = 120
-walk_time = 6.0
+walk_time = 2.0
 
 [node name="Goomba3" parent="enemies" instance=ExtResource( 3 )]
 position = Vector2( -2096, 47 )
